@@ -6,6 +6,7 @@ export function JsonLd() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: site.name,
+    alternateName: "StopMeasureZ.com",
     url: site.url,
     description:
       "Measure Z would tax Berkeley homes $58 million to capitalize a regional public bank that doesn’t exist. Oakland is paying $0. See your cost. Vote No on Nov 3.",

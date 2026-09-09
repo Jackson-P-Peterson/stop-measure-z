@@ -13,7 +13,7 @@ export function Footer() {
     <footer className="mt-auto border-t border-rule bg-bay text-paper">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-3">
         <div>
-          <p className="font-serif text-2xl">No on Measure Z</p>
+          <p className="font-serif text-2xl">STOP MEASURE Z...</p>
           <p className="mt-2 text-sm text-sage">{site.subline}</p>
           <p className="mt-4 font-mono text-[11px] leading-relaxed text-sage">
             {paidForBy()}

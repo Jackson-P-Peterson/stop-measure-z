@@ -84,7 +84,7 @@ export function TaxCalculator({
     const url = withUtm("https://stopmeasurez.com/cost", utm);
     try {
       if (navigator.share) {
-        await navigator.share({ title: "No on Measure Z", text, url });
+        await navigator.share({ title: "STOP MEASURE Z...", text, url });
       } else {
         await navigator.clipboard.writeText(`${text}`);
         setCopied(true);

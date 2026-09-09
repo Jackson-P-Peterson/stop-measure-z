@@ -28,20 +28,24 @@ const mono = IBM_Plex_Mono({
   display: "swap",
 });
 
-const title = "No on Measure Z | Berkeley shouldn’t bankroll the East Bay";
+const title = "STOP MEASURE Z...";
 const description =
   "Measure Z would tax Berkeley homes $58 million to capitalize a regional public bank that doesn’t exist. Oakland is paying $0. See your cost. Vote No on Nov 3.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title,
+  title: {
+    default: title,
+    template: `%s | ${title}`,
+  },
   description,
+  applicationName: title,
   alternates: { canonical: site.url },
   openGraph: {
     title,
     description,
     url: site.url,
-    siteName: site.name,
+    siteName: title,
     locale: "en_US",
     type: "website",
   },
@@ -49,6 +53,11 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
+  },
+  appleWebApp: {
+    title,
+    capable: true,
+    statusBarStyle: "default",
   },
   keywords: [
     "Measure Z Berkeley",
