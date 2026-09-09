@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #12141a;
+  --paper: #f6f1e8;
+  --eucalyptus: #1f4d3a;
+  --bay: #143a4d;
+  --terracotta: #c4492c;
+  --rule: #d9d0c3;
+  --sage: #e4ede6;
+  --document: #f3e6b0;
+  --background: var(--paper);
+  --foreground: var(--ink);
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-eucalyptus: var(--eucalyptus);
+  --color-bay: var(--bay);
+  --color-terracotta: var(--terracotta);
+  --color-rule: var(--rule);
+  --color-sage: var(--sage);
+  --color-document: var(--document);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-source-sans), "Source Sans 3", system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), Georgia, serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+.font-serif {
+  font-family: var(--font-serif), "Times New Roman", serif;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+:focus-visible {
+  outline: 2px solid var(--eucalyptus);
+  outline-offset: 3px;
+}

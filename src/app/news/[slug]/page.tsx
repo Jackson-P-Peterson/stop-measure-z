@@ -1,0 +1,13 @@
+import { PageIntro } from "@/components/PageIntro";
+
+export default function NewsStubPage() {
+  return (
+    <main className="mx-auto max-w-3xl px-4 pb-24">
+      <PageIntro
+        eyebrow="News"
+        title="No posts yet"
+        dek="This slug route exists so a later clip can live at /news/[slug]. We are not faking a blog."
+      />
+    </main>
+  );
+}
