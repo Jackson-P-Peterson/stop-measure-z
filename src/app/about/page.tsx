@@ -1,5 +1,5 @@
 import { PageIntro } from "@/components/PageIntro";
-import { site } from "@/lib/site";
+import { paidForBy, site } from "@/lib/site";
 
 export default function AboutPage() {
   return (
@@ -11,7 +11,7 @@ export default function AboutPage() {
       />
       <div className="space-y-4 text-bay">
         <p>
-          {site.committeeName}. FPPC ID {site.fppcId}. Registered with the FPPC.
+          {site.committeeName}. FPPC ID {site.fppcId}.
         </p>
         <p>
           Treasurer:{" "}
@@ -31,10 +31,7 @@ export default function AboutPage() {
             FPPC NetFile
           </a>
         </p>
-        <p className="font-mono text-xs">
-          Paid for by {site.committeeName}, FPPC ID {site.fppcId}. Not authorized by
-          a candidate or candidate committee.
-        </p>
+        <p className="font-mono text-xs">{paidForBy()}</p>
       </div>
     </main>
   );

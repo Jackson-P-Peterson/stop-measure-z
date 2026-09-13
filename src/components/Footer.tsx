@@ -19,7 +19,7 @@ export function Footer() {
             {paidForBy()}
           </p>
           <p className="mt-2 font-mono text-[11px] text-sage">
-            Registered with the FPPC.
+            FPPC ID pending.
           </p>
         </div>
         <nav className="grid gap-2 text-sm" aria-label="Footer">

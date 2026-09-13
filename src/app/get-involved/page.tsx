@@ -9,7 +9,7 @@ export default function GetInvolvedPage() {
       <PageIntro
         eyebrow="November 3 is close"
         title="Get involved"
-        dek="Endorse, volunteer, get updates, or request a sign — pick as many as you want. Donate separately on Stripe."
+        dek="Endorse, volunteer, get updates, or request a sign — pick as many as you want. Donate separately by email."
       />
       <div className="grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(16rem,0.85fr)]">
         <GetInvolvedForm />

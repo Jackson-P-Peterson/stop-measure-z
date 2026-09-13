@@ -12,8 +12,8 @@ export default function PrivacyPage() {
       <div className="space-y-4 text-bay">
         <p>
           {site.committeeName} uses this site to accept endorsements, volunteer
-          sign-ups, and lawn-sign requests. Donate buttons go to Stripe. We do
-          not collect card numbers on this domain.
+          sign-ups, and lawn-sign requests. Donate buttons email{" "}
+          {site.campaignEmail}. We do not collect card numbers on this domain.
         </p>
         <p>
           Analytics, if enabled, use Plausible or GA4 with IP anonymization. We

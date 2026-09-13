@@ -3,15 +3,18 @@
 import type { ReactNode } from "react";
 import { track } from "@/lib/analytics";
 import { site } from "@/lib/site";
-import { withUtm } from "@/lib/utm";
-import { useUtm } from "./UtmProvider";
 
 const AMOUNTS = [25, 50, 100, 250, 1000] as const;
 
-export function donateHref(amount?: number, utm: ReturnType<typeof useUtm> = {}) {
-  const url = new URL(site.stripeDonateUrl);
-  if (amount) url.searchParams.set("amount", String(amount));
-  return withUtm(url.toString(), utm);
+export function donateHref(amount?: number) {
+  const url = new URL(`mailto:${site.campaignEmail}`);
+  url.searchParams.set(
+    "subject",
+    amount
+      ? `Donation of $${amount.toLocaleString("en-US")} — No on Measure Z`
+      : "Donation — No on Measure Z",
+  );
+  return url.toString();
 }
 
 export function DonateLink({
@@ -23,12 +26,10 @@ export function DonateLink({
   className?: string;
   amount?: number;
 }) {
-  const utm = useUtm();
   return (
     <a
-      href={donateHref(amount, utm)}
+      href={donateHref(amount)}
       className={className}
-      rel="noopener noreferrer"
       onClick={() => track("donate_click", amount ? { amount } : undefined)}
     >
       {children}
@@ -65,7 +66,8 @@ export function DonateBlock({ compact = false }: { compact?: boolean }) {
       </div>
       {!compact ? (
         <p className="mt-4 font-mono text-xs text-bay">
-          Donations process on Stripe. We do not collect cards on this domain.
+          Donate by email to {site.campaignEmail}. We do not collect cards on this
+          domain.
         </p>
       ) : null}
     </section>

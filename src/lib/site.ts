@@ -4,15 +4,15 @@ export const site = {
   subline: "Berkeley shouldn’t bankroll the East Bay.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://stopmeasurez.com",
   committeeName:
-    process.env.NEXT_PUBLIC_COMMITTEE_NAME ?? "[COMMITTEE LEGAL NAME]",
-  fppcId: process.env.NEXT_PUBLIC_FPPC_ID ?? "#________",
-  stripeDonateUrl:
-    process.env.NEXT_PUBLIC_STRIPE_DONATE_URL ??
-    "https://donate.stripe.com/TODO",
+    process.env.NEXT_PUBLIC_COMMITTEE_NAME ??
+    "Keep Berkeley Money in Berkeley, No on Measure Z",
+  fppcId: process.env.NEXT_PUBLIC_FPPC_ID ?? "#Pending",
+  campaignEmail:
+    process.env.NEXT_PUBLIC_CAMPAIGN_EMAIL ?? "campaign@stopmeasurez.com",
   formEndpoint: process.env.FORM_ENDPOINT ?? "",
   treasurerEmail:
-    process.env.NEXT_PUBLIC_TREASURER_EMAIL ?? "[TREASURER_EMAIL]",
-  pressEmail: process.env.NEXT_PUBLIC_PRESS_EMAIL ?? "[PRESS_EMAIL]",
+    process.env.NEXT_PUBLIC_TREASURER_EMAIL ?? "campaign@stopmeasurez.com",
+  pressEmail: process.env.NEXT_PUBLIC_PRESS_EMAIL ?? "campaign@stopmeasurez.com",
   netfileUrl:
     process.env.NEXT_PUBLIC_NETFILE_URL ??
     "https://netfile.com/Connect2/api/public",
@@ -21,5 +21,5 @@ export const site = {
 } as const;
 
 export function paidForBy(): string {
-  return `Paid for by ${site.committeeName}, FPPC ID ${site.fppcId}. Not authorized by a candidate or candidate committee.`;
+  return "Keep Berkeley Money in Berkeley, No on Measure Z, FPPC #Pending";
 }
