@@ -1,6 +1,8 @@
 export const site = {
-  name: "STOP MEASURE Z...",
-  campaignLine: "STOP MEASURE Z...",
+  name: "STOP MEASURE Z.",
+  campaignLine: "STOP MEASURE Z.",
+  contactEmail:
+    process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "contact@stopmeasurez.com",
   subline: "Berkeley shouldn’t bankroll the East Bay.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://stopmeasurez.com",
   committeeName:

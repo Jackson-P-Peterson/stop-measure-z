@@ -13,7 +13,7 @@ export function Footer() {
     <footer className="mt-auto border-t border-rule bg-bay text-paper">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-3">
         <div>
-          <p className="font-serif text-2xl">STOP MEASURE Z...</p>
+          <p className="font-serif text-2xl">{site.name}</p>
           <p className="mt-2 text-sm text-sage">{site.subline}</p>
           <p className="mt-4 font-mono text-[11px] leading-relaxed text-sage">
             {paidForBy()}
@@ -67,6 +67,14 @@ export function Footer() {
             ) : null}
           </ul>
         </div>
+      </div>
+      <div className="mx-auto max-w-6xl border-t border-paper/15 px-4 py-4">
+        <a
+          href={`mailto:${site.contactEmail}`}
+          className="font-mono text-sm text-sage hover:text-paper hover:underline"
+        >
+          {site.contactEmail}
+        </a>
       </div>
     </footer>
   );

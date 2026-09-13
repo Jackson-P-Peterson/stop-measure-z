@@ -28,7 +28,7 @@ const mono = IBM_Plex_Mono({
   display: "swap",
 });
 
-const title = "STOP MEASURE Z...";
+const title = "STOP MEASURE Z.";
 const description =
   "Measure Z would tax Berkeley homes $58 million to capitalize a regional public bank that doesn’t exist. Oakland is paying $0. See your cost. Vote No on Nov 3.";
 
