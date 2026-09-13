@@ -326,7 +326,7 @@ export const cityDeficitNote =
 
 export const permissionQuote = {
   text: "I don’t think we’re, collectively, ideologically, anti-public bank at all. The issue is the way this is written… Berkeley money going to a regional effort.",
-  attribution: "Paul Mathew, Within Our Means Berkeley",
+  attribution: "Paul Mathew",
 } as const;
 
 export const calculatorExamples = {

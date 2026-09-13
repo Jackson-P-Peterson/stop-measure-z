@@ -1,5 +1,5 @@
 import { PageIntro } from "@/components/PageIntro";
-import { paidForBy, site } from "@/lib/site";
+import { site } from "@/lib/site";
 
 export default function AboutPage() {
   return (
@@ -7,31 +7,25 @@ export default function AboutPage() {
       <PageIntro
         eyebrow="Committee"
         title="Who’s behind No on Z"
-        dek="Volunteer neighbors and local property owners. Within Our Means Berkeley. Not a party committee."
+        dek="The official opposition committee for No on Measure Z."
       />
       <div className="space-y-4 text-bay">
         <p>
-          {site.committeeName}. FPPC ID {site.fppcId}.
+          StopMeasureZ.com is the site of the official ballot-measure committee
+          opposing Berkeley Measure Z on the November 3, 2026 ballot.
         </p>
         <p>
-          Treasurer:{" "}
-          <a className="text-eucalyptus underline" href={`mailto:${site.treasurerEmail}`}>
-            {site.treasurerEmail}
-          </a>
+          Volunteer neighbors and local property owners. Not a party committee.
         </p>
         <p>
-          Press:{" "}
-          <a className="text-eucalyptus underline" href={`mailto:${site.pressEmail}`}>
-            {site.pressEmail}
+          Contact:{" "}
+          <a
+            className="text-eucalyptus underline"
+            href={`mailto:${site.contactEmail}`}
+          >
+            {site.contactEmail}
           </a>
         </p>
-        <p>
-          Filings:{" "}
-          <a className="text-eucalyptus underline" href={site.netfileUrl}>
-            FPPC NetFile
-          </a>
-        </p>
-        <p className="font-mono text-xs">{paidForBy()}</p>
       </div>
     </main>
   );

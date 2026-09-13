@@ -15,12 +15,6 @@ export function Footer() {
         <div>
           <p className="font-serif text-2xl">{site.name}</p>
           <p className="mt-2 text-sm text-sage">{site.subline}</p>
-          <p className="mt-4 font-mono text-[11px] leading-relaxed text-sage">
-            {paidForBy()}
-          </p>
-          <p className="mt-2 font-mono text-[11px] text-sage">
-            FPPC ID pending.
-          </p>
         </div>
         <nav className="grid gap-2 text-sm" aria-label="Footer">
           <Link href="/cost" className="hover:underline">
@@ -68,7 +62,10 @@ export function Footer() {
           </ul>
         </div>
       </div>
-      <div className="mx-auto max-w-6xl border-t border-paper/15 px-4 py-4">
+      <div className="mx-auto flex max-w-6xl flex-col gap-2 border-t border-paper/15 px-4 py-4 sm:flex-row sm:items-center sm:justify-between">
+        <p className="font-mono text-[11px] leading-relaxed text-sage">
+          {paidForBy()}
+        </p>
         <a
           href={`mailto:${site.contactEmail}`}
           className="font-mono text-sm text-sage hover:text-paper hover:underline"

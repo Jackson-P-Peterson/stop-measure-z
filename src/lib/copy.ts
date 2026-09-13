@@ -59,8 +59,8 @@ export const faqItems = [
     id: "who-we-are",
     q: "Who is behind No on Z?",
     short:
-      "Volunteer neighbors and local property owners, including Within Our Means Berkeley. Not a party committee.",
-    a: "Volunteer neighbors and local property owners. Within Our Means Berkeley is part of the effort. This is not a party committee. Treasurer and FPPC filings will be linked on /about once the committee ID is live. We will not pretend to be a council slate.",
+      "The official opposition committee for No on Measure Z. Volunteer neighbors and local property owners. Not a party committee.",
+    a: "We are the official opposition committee for No on Measure Z. Volunteer neighbors and local property owners. This is not a party committee. We will not pretend to be a council slate.",
   },
   {
     id: "uvy",

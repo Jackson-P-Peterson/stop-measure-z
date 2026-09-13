@@ -26,10 +26,9 @@ const seeds = [
     group: "Community organizations",
     items: [
       {
-        name: "Within Our Means Berkeley",
-        place: "Co-chairs: Paul Mathew, [Lomax — confirm in writing]",
-        quote:
-          "Seed listing only. Publish as co-chairs once confirmed in writing.",
+        name: "[ORGANIZATION — confirm in writing]",
+        place: "Berkeley",
+        quote: "Placeholder. Do not invent organizational partners.",
       },
     ],
   },

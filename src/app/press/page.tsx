@@ -12,8 +12,8 @@ export default function PressPage() {
       <section className="space-y-4">
         <h2 className="font-serif text-2xl">Boilerplate</h2>
         <p>
-          StopMeasureZ.com is the site of the ballot-measure committee opposing
-          Berkeley Measure Z on the November 3, 2026 ballot. Measure Z is a
+          StopMeasureZ.com is the site of the official opposition committee for
+          No on Measure Z on the November 3, 2026 ballot. Measure Z is a
           voter-initiated special parcel tax to capitalize a regional Public Bank
           East Bay that does not exist — no charter, no FDIC insurance, no DFPI
           approval. Oakland is paying $0. Alameda County is paying $0. Richmond
