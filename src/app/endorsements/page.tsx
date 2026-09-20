@@ -1,59 +1,34 @@
 import { EndorsementForm } from "@/components/EndorsementForm";
+import { PageJsonLd } from "@/components/JsonLd";
 import { PageIntro } from "@/components/PageIntro";
+import { pageMetadata } from "@/lib/seo";
 
-const seeds = [
-  {
-    group: "Neighbors",
-    items: [
-      {
-        name: "[NAME — confirm in writing]",
-        place: "Berkeley Hills",
-        quote: "Placeholder until the neighbor signs off. Do not invent endorsers.",
-      },
-    ],
-  },
-  {
-    group: "Small landlords & merchants",
-    items: [
-      {
-        name: "[NAME — confirm in writing]",
-        place: "North Shattuck",
-        quote: "Placeholder. One sentence, neighborhood or title.",
-      },
-    ],
-  },
-  {
-    group: "Community organizations",
-    items: [
-      {
-        name: "[ORGANIZATION — confirm in writing]",
-        place: "Berkeley",
-        quote: "Placeholder. Do not invent organizational partners.",
-      },
-    ],
-  },
-];
+export const metadata = pageMetadata("/endorsements");
+
+const groups = [
+  "Elected Officials",
+  "Organizations",
+  "Businesses",
+  "Community Members",
+] as const;
 
 export default function EndorsementsPage() {
   return (
     <main className="mx-auto max-w-4xl px-4 pb-24">
+      <PageJsonLd path="/endorsements" />
       <PageIntro
-        eyebrow="Validators, not politicians"
+        eyebrow="Written confirmation only"
         title="Endorsements"
-        dek="Quotes from neighbors, small landlords, seniors, merchants, former budget hawks. No councilmember hero shots."
+        dek="Elected officials, organizations, businesses, and community members. Names appear here after they sign off in writing. We will not invent endorsers."
       />
       <div className="grid gap-10">
-        {seeds.map((group) => (
-          <section key={group.group}>
-            <h2 className="font-serif text-2xl">{group.group}</h2>
+        {groups.map((group) => (
+          <section key={group}>
+            <h2 className="font-serif text-2xl">{group}</h2>
             <div className="mt-4 grid gap-4">
-              {group.items.map((item) => (
-                <article key={item.name} className="border border-dashed border-rule p-5">
-                  <p className="font-serif text-xl">{item.name}</p>
-                  <p className="font-mono text-xs text-eucalyptus">{item.place}</p>
-                  <p className="mt-2 text-bay">{item.quote}</p>
-                </article>
-              ))}
+              <article className="border border-dashed border-rule p-5">
+                <p className="font-serif text-xl">Coming Soon</p>
+              </article>
             </div>
           </section>
         ))}

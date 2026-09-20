@@ -106,11 +106,7 @@ export function VolunteerForm({
             <option>Hills house party</option>
           </select>
         </label>
-      ) : (
-        <p className="text-sm text-bay">
-          Lawn signs first in 94705, 94707, 94708, 94709, 94703.
-        </p>
-      )}
+      ) : null}
       <button type="submit" className="w-fit border border-ink px-4 py-2 text-sm hover:bg-ink hover:text-paper">
         Submit
       </button>

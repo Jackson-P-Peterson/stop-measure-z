@@ -1,36 +1,28 @@
 "use client";
 
-import { useState } from "react";
-import { submitGetInvolved } from "@/app/actions";
 import { track } from "@/lib/analytics";
 import { WANT_TO_OPTIONS } from "@/lib/involve";
 
-export function GetInvolvedForm() {
-  const [status, setStatus] = useState<"idle" | "ok" | "err">("idle");
-  const [message, setMessage] = useState("");
-
-  async function onSubmit(formData: FormData) {
-    const result = await submitGetInvolved(formData);
-    if (!result.ok) {
-      setStatus("err");
-      setMessage(result.error);
-      return;
-    }
-
-    const selected = formData.getAll("iWantTo").map(String);
-    if (selected.includes("Endorse")) track("endorse_submit");
-    if (selected.includes("Get A Sign")) track("sign_request");
-
-    setStatus("ok");
-    setMessage(
-      result.queued
-        ? "Saved on this computer. Deploy the sheet webhook (see README) so rows land in the spreadsheet."
-        : "You’re on the list. A neighbor will follow up.",
-    );
-  }
-
+export function GetInvolvedForm({
+  sent,
+  error,
+}: {
+  sent?: boolean;
+  error?: boolean;
+}) {
   return (
-    <form action={onSubmit} className="grid gap-5 border border-rule bg-paper p-5 sm:p-8">
+    <form
+      action="/api/involved"
+      method="post"
+      className="grid gap-5 border border-rule bg-paper p-5 sm:p-8"
+      onSubmit={() => {
+        const selected = Array.from(
+          document.querySelectorAll<HTMLInputElement>('input[name="iWantTo"]:checked'),
+        ).map((input) => input.value);
+        if (selected.includes("Endorse")) track("endorse_submit");
+        if (selected.includes("Get A Sign")) track("sign_request");
+      }}
+    >
       <fieldset>
         <legend className="font-serif text-2xl">I want to</legend>
         <p className="mt-1 text-sm text-bay">Select as many as apply.</p>
@@ -60,11 +52,6 @@ export function GetInvolvedForm() {
         <Field name="zip" label="ZIP code" required autoComplete="postal-code" />
       </div>
 
-      <p className="text-sm text-bay">
-        Lawn signs first in 94705, 94707, 94708, 94709, 94703. Hills hosts: check
-        Volunteer.
-      </p>
-
       <button
         type="submit"
         className="min-h-12 w-full bg-eucalyptus px-5 py-3 text-paper hover:bg-bay sm:w-fit"
@@ -72,9 +59,14 @@ export function GetInvolvedForm() {
         Send
       </button>
 
-      {status !== "idle" ? (
-        <p className={status === "ok" ? "text-eucalyptus" : "text-terracotta"} role="status">
-          {message}
+      {sent ? (
+        <p className="text-eucalyptus" role="status">
+          You’re on the list. A neighbor will follow up.
+        </p>
+      ) : null}
+      {error ? (
+        <p className="text-terracotta" role="status">
+          We couldn’t send that. Email campaign@stopmeasurez.com and we’ll add you.
         </p>
       ) : null}
     </form>
