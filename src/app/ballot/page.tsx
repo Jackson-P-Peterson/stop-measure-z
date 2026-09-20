@@ -1,11 +1,16 @@
 import { BallotStack } from "@/components/BallotStack";
+import { PageJsonLd } from "@/components/JsonLd";
 import { PageIntro } from "@/components/PageIntro";
 import { Photo } from "@/components/Photo";
 import { cityDeficitNote } from "@/lib/facts";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata("/ballot");
 
 export default function BallotPage() {
   return (
     <main className="mx-auto max-w-3xl px-4 pb-28 md:pb-24">
+      <PageJsonLd path="/ballot" />
       <PageIntro
         eyebrow="November 3, 2026"
         title="The stack"

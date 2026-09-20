@@ -1,15 +1,20 @@
 import { BallotStack } from "@/components/BallotStack";
 import { DonateBlock } from "@/components/DonateBlock";
 import { EastBayBillMap } from "@/components/EastBayBillMap";
+import { PageJsonLd } from "@/components/JsonLd";
 import { Photo } from "@/components/Photo";
 import { ShareSheet } from "@/components/ShareSheet";
 import { TaxCalculator } from "@/components/TaxCalculator";
 import { fourReasons } from "@/lib/copy";
 import { permissionQuote, regionalContributions } from "@/lib/facts";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata("/");
 
 export default function HomePage() {
   return (
     <main className="pb-28 md:pb-16">
+      <PageJsonLd path="/" />
       <section className="relative isolate min-h-[32rem] overflow-hidden sm:min-h-[36rem]">
         <Photo
           src="/images/berkeley-hills.jpg"

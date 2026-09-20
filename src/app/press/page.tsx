@@ -1,9 +1,14 @@
+import { PageJsonLd } from "@/components/JsonLd";
 import { PageIntro } from "@/components/PageIntro";
+import { pageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
+
+export const metadata = pageMetadata("/press");
 
 export default function PressPage() {
   return (
     <main className="mx-auto max-w-3xl px-4 pb-24">
+      <PageJsonLd path="/press" />
       <PageIntro
         eyebrow="Media"
         title="Press"

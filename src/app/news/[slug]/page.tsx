@@ -1,4 +1,10 @@
 import { PageIntro } from "@/components/PageIntro";
+import { noIndexMetadata } from "@/lib/seo";
+
+export const metadata = noIndexMetadata(
+  "News",
+  "No news posts have been published yet on StopMeasureZ.com.",
+);
 
 export default function NewsStubPage() {
   return (

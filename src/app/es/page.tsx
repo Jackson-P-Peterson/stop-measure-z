@@ -1,4 +1,10 @@
 import { PageIntro } from "@/components/PageIntro";
+import { noIndexMetadata } from "@/lib/seo";
+
+export const metadata = noIndexMetadata(
+  "Traducción en camino",
+  "Spanish translation is not published yet. The official No on Measure Z site is in English.",
+);
 
 export default function SpanishStubPage() {
   return (

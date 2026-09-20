@@ -1,9 +1,14 @@
+import { PageJsonLd } from "@/components/JsonLd";
 import { PageIntro } from "@/components/PageIntro";
+import { pageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
+
+export const metadata = pageMetadata("/privacy");
 
 export default function PrivacyPage() {
   return (
     <main className="mx-auto max-w-3xl px-4 pb-24">
+      <PageJsonLd path="/privacy" />
       <PageIntro
         eyebrow="Legal"
         title="Privacy + SMS terms"

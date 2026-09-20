@@ -1,24 +1,19 @@
 import type { MetadataRoute } from "next";
+import { seoPages } from "@/lib/seo";
 import { site } from "@/lib/site";
 
-const paths = [
-  "/",
-  "/cost",
-  "/why-berkeley",
-  "/fine-print",
-  "/ballot",
-  "/faq",
-  "/endorsements",
-  "/get-involved",
-  "/press",
-  "/about",
-  "/privacy",
-];
+const lastModified = new Date("2026-09-20");
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return paths.map((path) => ({
-    url: `${site.url}${path === "/" ? "" : path}`,
-    changeFrequency: "weekly",
-    priority: path === "/" || path === "/cost" ? 1 : 0.7,
+  return (Object.keys(seoPages) as (keyof typeof seoPages)[]).map((path) => ({
+    url: path === "/" ? site.url : `${site.url}${path}`,
+    lastModified,
+    changeFrequency: path === "/" || path === "/cost" ? "weekly" : "monthly",
+    priority:
+      path === "/"
+        ? 1
+        : path === "/cost" || path === "/why-berkeley" || path === "/faq"
+          ? 0.9
+          : 0.7,
   }));
 }

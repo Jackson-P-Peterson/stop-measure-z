@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { Fraunces, IBM_Plex_Mono, Source_Sans_3 } from "next/font/google";
 import { AnalyticsScript } from "@/components/AnalyticsScript";
 import { Footer } from "@/components/Footer";
-import { JsonLd } from "@/components/JsonLd";
+import { SiteJsonLd } from "@/components/JsonLd";
 import { Nav } from "@/components/Nav";
 import { StickyBallotBar } from "@/components/StickyBallotBar";
 import { UtmProvider } from "@/components/UtmProvider";
+import { brandTitle, defaultDescription, defaultTitle, searchKeywords } from "@/lib/seo";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -28,43 +29,56 @@ const mono = IBM_Plex_Mono({
   display: "swap",
 });
 
-const title = "STOP MEASURE Z.";
-const description =
-  "Measure Z would tax Berkeley homes $58 million to capitalize a regional public bank that doesn’t exist. Oakland is paying $0. See your cost. Vote No on Nov 3.";
-
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: title,
-    template: `%s | ${title}`,
+    default: defaultTitle,
+    template: `%s · ${brandTitle}`,
   },
-  description,
-  applicationName: title,
-  alternates: { canonical: site.url },
+  description: defaultDescription,
+  applicationName: brandTitle,
+  authors: [{ name: site.committeeName, url: site.url }],
+  creator: site.committeeName,
+  publisher: site.committeeName,
+  category: "Politics",
+  keywords: [...searchKeywords],
+  referrer: "origin-when-cross-origin",
+  formatDetection: { telephone: false, email: false, address: false },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
-    title,
-    description,
+    title: defaultTitle,
+    description: defaultDescription,
     url: site.url,
-    siteName: title,
+    siteName: brandTitle,
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title,
-    description,
+    title: defaultTitle,
+    description: defaultDescription,
   },
   appleWebApp: {
-    title,
+    title: brandTitle,
     capable: true,
     statusBarStyle: "default",
   },
-  keywords: [
-    "Measure Z Berkeley",
-    "Berkeley public bank tax",
-    "No on Z Berkeley",
-    "Public Bank East Bay tax",
-  ],
+  other: {
+    "geo.region": "US-CA",
+    "geo.placename": "Berkeley",
+    "geo.position": "37.8715;-122.2730",
+    ICBM: "37.8715, -122.2730",
+  },
 };
 
 export const viewport = {
@@ -76,7 +90,7 @@ export const viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
+      lang="en-US"
       className={`${serif.variable} ${sans.variable} ${mono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-paper font-sans text-ink">
@@ -92,7 +106,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <div id="main">{children}</div>
           <Footer />
           <StickyBallotBar />
-          <JsonLd />
+          <SiteJsonLd />
         </UtmProvider>
       </body>
     </html>

@@ -1,11 +1,16 @@
 import { TaxCalculator } from "@/components/TaxCalculator";
+import { PageJsonLd } from "@/components/JsonLd";
 import { PageIntro } from "@/components/PageIntro";
 import { Photo } from "@/components/Photo";
 import { calculatorExamples } from "@/lib/facts";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata("/cost");
 
 export default function CostPage() {
   return (
     <main className="mx-auto max-w-6xl px-4 pb-28 md:pb-24">
+      <PageJsonLd path="/cost" />
       <PageIntro
         eyebrow="The product"
         title="What Measure Z costs"

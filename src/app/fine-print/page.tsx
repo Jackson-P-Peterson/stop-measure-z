@@ -1,10 +1,15 @@
 import { OrdinanceCard } from "@/components/OrdinanceCard";
+import { PageJsonLd } from "@/components/JsonLd";
 import { PageIntro } from "@/components/PageIntro";
 import { ordinanceExcerpts, ordinancePdf } from "@/lib/facts";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata("/fine-print");
 
 export default function FinePrintPage() {
   return (
     <main className="mx-auto max-w-6xl px-4 pb-24">
+      <PageJsonLd path="/fine-print" />
       <PageIntro
         eyebrow="They wrote it down"
         title="Fine print"

@@ -1,9 +1,14 @@
+import { PageJsonLd } from "@/components/JsonLd";
 import { PageIntro } from "@/components/PageIntro";
+import { pageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
+
+export const metadata = pageMetadata("/about");
 
 export default function AboutPage() {
   return (
     <main className="mx-auto max-w-3xl px-4 pb-24">
+      <PageJsonLd path="/about" />
       <PageIntro
         eyebrow="Committee"
         title="Who’s behind No on Z"

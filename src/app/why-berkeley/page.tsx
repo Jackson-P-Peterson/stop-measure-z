@@ -1,11 +1,16 @@
 import { EastBayBillMap } from "@/components/EastBayBillMap";
+import { PageJsonLd } from "@/components/JsonLd";
 import { PageIntro } from "@/components/PageIntro";
 import { Photo } from "@/components/Photo";
 import { sources, yesQuotes } from "@/lib/facts";
+import { pageMetadata } from "@/lib/seo";
+
+export const metadata = pageMetadata("/why-berkeley");
 
 export default function WhyBerkeleyPage() {
   return (
     <main className="mx-auto max-w-6xl px-4 pb-28 md:pb-24">
+      <PageJsonLd path="/why-berkeley" />
       <PageIntro
         eyebrow="Regional fairness"
         title="They chose us because we’d pay"
