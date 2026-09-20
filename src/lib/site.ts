@@ -7,8 +7,8 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://stopmeasurez.com",
   committeeName:
     process.env.NEXT_PUBLIC_COMMITTEE_NAME ??
-    "Keep Berkeley Money in Berkeley, No on Measure Z",
-  fppcId: process.env.NEXT_PUBLIC_FPPC_ID ?? "#Pending",
+    "Protect Berkeley, No on Measure Z",
+  fppcId: process.env.NEXT_PUBLIC_FPPC_ID ?? "#1496629",
   campaignEmail:
     process.env.NEXT_PUBLIC_CAMPAIGN_EMAIL ?? "campaign@stopmeasurez.com",
   formEndpoint: process.env.FORM_ENDPOINT ?? "",
@@ -23,5 +23,5 @@ export const site = {
 } as const;
 
 export function paidForBy(): string {
-  return "Keep Berkeley Money in Berkeley, No on Measure Z, FPPC #Pending";
+  return `Paid for by ${site.committeeName}. FPPC ID ${site.fppcId}.`;
 }

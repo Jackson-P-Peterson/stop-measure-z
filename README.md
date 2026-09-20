@@ -87,7 +87,7 @@ Campaign dashboard fields to wire later — do not scrape assessor data:
 
 ## Launch checklist
 
-- [ ] Real committee name + FPPC ID
+- [x] Real committee name + FPPC ID
 - [ ] Stripe donate link live
 - [ ] Domains: StopMeasureZ.com (primary), 301s from NoOnZ.org / NoOnMeasureZ.org
 - [ ] Privacy policy + SMS terms if texting
