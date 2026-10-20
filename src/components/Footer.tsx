@@ -26,6 +26,12 @@ export function Footer() {
           <Link href="/faq" className="hover:underline">
             FAQ
           </Link>
+          <Link href="/endorsements" className="hover:underline">
+            Endorsements
+          </Link>
+          <Link href="/news" className="hover:underline">
+            News
+          </Link>
           <Link href="/get-involved" className="hover:underline">
             Donate / volunteer
           </Link>

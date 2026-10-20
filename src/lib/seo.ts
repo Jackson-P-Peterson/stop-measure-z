@@ -42,6 +42,7 @@ export type SeoPath =
   | "/ballot"
   | "/faq"
   | "/endorsements"
+  | "/news"
   | "/get-involved"
   | "/press"
   | "/about"
@@ -107,7 +108,15 @@ export const seoPages: Record<SeoPath, SeoPage> = {
     path: "/endorsements",
     title: "No on Measure Z Endorsements | Berkeley",
     description:
-      "Endorsements for No on Berkeley Measure Z, the November 3, 2026 public bank parcel tax. Add your name as a neighbor, merchant, or organization.",
+      "No on Berkeley Measure Z is endorsed by the Berkeley Democratic Club, Within Our Means Berkeley, Affordable Berkeley, and Councilmembers Mark Humbert, Rashi Kesarwani, and Terry Taplin.",
+    schemaType: "WebPage",
+    index: true,
+  },
+  "/news": {
+    path: "/news",
+    title: "Measure Z News | Berkeley Public Bank Tax Coverage",
+    description:
+      "News and opinion on Berkeley Measure Z, the November 3, 2026 public bank parcel tax, from NBC Bay Area, the Daily Californian, Berkeleyside, and the Berkeley Scanner.",
     schemaType: "WebPage",
     index: true,
   },
@@ -277,6 +286,8 @@ ${defaultDescription}
 - [Fine print](${site.url}/fine-print): Ordinance inflator, exemption, lien, charter fallback
 - [The ballot](${site.url}/ballot): November 3, 2026 stack (U–AA)
 - [FAQ](${site.url}/faq): Public banks, housing, exemption, Yes-campaign money
+- [Endorsements](${site.url}/endorsements): Berkeley Democratic Club, Within Our Means Berkeley, Affordable Berkeley, Councilmembers Mark Humbert, Rashi Kesarwani, and Terry Taplin
+- [News](${site.url}/news): Coverage and opinion, newest first
 - [Get involved](${site.url}/get-involved): Endorse, volunteer, signs
 - [Press](${site.url}/press): Boilerplate
 - [About](${site.url}/about): Official No committee

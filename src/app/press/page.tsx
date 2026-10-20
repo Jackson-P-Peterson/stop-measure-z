@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { PageJsonLd } from "@/components/JsonLd";
 import { PageIntro } from "@/components/PageIntro";
 import { pageMetadata } from "@/lib/seo";
@@ -34,6 +35,13 @@ export default function PressPage() {
         <ul className="list-disc space-y-2 pl-5 text-bay">
           <li>One-pager PDF — TODO: add `/press/one-pager.pdf` after counsel review.</li>
           <li>NO ON Z stamp / lockup — use the on-site stamp; SVG logo TODO.</li>
+          <li>
+            Coverage — see{" "}
+            <Link className="text-eucalyptus underline" href="/news">
+              the news page
+            </Link>
+            .
+          </li>
           <li>Releases — none yet. Do not invent them.</li>
         </ul>
       </section>

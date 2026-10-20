@@ -104,5 +104,6 @@ export const navLinks = [
   { href: "/ballot", label: "The ballot" },
   { href: "/faq", label: "FAQ" },
   { href: "/endorsements", label: "Endorsements" },
+  { href: "/news", label: "News" },
   { href: "/get-involved", label: "Get involved" },
 ] as const;

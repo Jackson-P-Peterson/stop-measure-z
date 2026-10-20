@@ -1,5 +1,6 @@
 import { BallotStack } from "@/components/BallotStack";
 import { DonateBlock } from "@/components/DonateBlock";
+import { EndorsementGrid } from "@/components/EndorsementGrid";
 import { EastBayBillMap } from "@/components/EastBayBillMap";
 import { PageJsonLd } from "@/components/JsonLd";
 import { Photo } from "@/components/Photo";
@@ -162,6 +163,16 @@ export default function HomePage() {
             — {permissionQuote.attribution}
           </footer>
         </blockquote>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pb-12 sm:pb-16">
+        <p className="font-mono text-xs uppercase tracking-[0.22em] text-eucalyptus">
+          Endorsements
+        </p>
+        <h2 className="mt-2 font-serif text-3xl md:text-4xl">Who is voting No</h2>
+        <div className="mt-8">
+          <EndorsementGrid />
+        </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-4 pb-10">
